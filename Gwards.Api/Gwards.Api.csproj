@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="AspNet.Security.OpenId.Steam" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.7" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.7" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="SkiaSharp" Version="2.88.8" />
+	  <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="2.88.8" />
+	  <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.8" />
+	  <PackageReference Include="SteamWebAPI2" Version="4.4.1" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.7.3" />
+	  <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+	  <PackageReference Include="TonSdk.Client" Version="0.3.10" />
+	  <PackageReference Include="TonSdk.Contracts" Version="0.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gward.Common\Gward.Common.csproj" />
+    <ProjectReference Include="..\Gwards.DAL\Gwards.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\NftImages\Passports\.gitkeep" />
+  </ItemGroup>
+
+</Project>

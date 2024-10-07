@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ConnectionString=User ID=${DB_USERNAME}; Password=${DB_PASSWORD}; Host=pg_db; Port=5432; Database=${DB_NAME}; Pooling=true
+    depends_on:
+      - pg_db
+    volumes:
+      - public:/app/wwwroot
+    ports:
+      - 8080:8080
+    networks:
+      - pg_db
+
+  pg_db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - pg_db
+
+volumes:
+  public:
+  pgdata:
+
+networks:
+  pg_db:
